@@ -37,3 +37,9 @@ public class Matricula {
         return dni + " | " + curso + " | " + fecha + " | " + precioFinal;
     }
 }
+
+    @Override
+    public String toString() {
+        return dni + " | " + curso + " | " + fecha + " | " + precioFinal;
+    }
+}
