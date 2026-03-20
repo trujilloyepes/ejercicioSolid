@@ -29,4 +29,12 @@ public class Libro {
     public String getTitulo() {
         return titulo;
     }
+
+    public String getPrestadoA() {
+        return prestadoA;
+    }
+
+    public LocalDate getFechaDevolucion() {
+        return fechaDevolucion;
+    }
 }
