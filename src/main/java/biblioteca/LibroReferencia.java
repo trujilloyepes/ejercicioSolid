@@ -1,7 +1,5 @@
 package biblioteca;
 
-import java.time.LocalDate;
-
 public class LibroReferencia extends Libro {
 
     public LibroReferencia(String titulo) {
@@ -9,9 +7,20 @@ public class LibroReferencia extends Libro {
     }
 
     @Override
-    public void prestarA(String dni, LocalDate fechaDevolucion) {
-        // Como no se pueden prestar, ponemos que se prestan a SALA
-        this.prestadoA = "SALA";
-        this.fechaDevolucion = LocalDate.now();
+    public void prestarA(String dni, java.time.LocalDate fechaDevolucion) {
+        // No se puede prestar, solo se consulta en sala
+        System.out.println("El libro de referencia \"" + titulo + "\" no se puede prestar.");
+    }
+
+    @Override
+    public boolean estaPrestado() {
+        // Nunca está prestado
+        return false;
+    }
+
+    @Override
+    public void devolver() {
+        // No se puede devolver
+        System.out.println("El libro de referencia \"" + titulo + "\" no se puede devolver.");
     }
 }
