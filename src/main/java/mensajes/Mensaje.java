@@ -13,9 +13,8 @@ public abstract class Mensaje {
         this.cuerpo = cuerpo;
     }
 
-    public abstract String formatear();
+    // Cada tipo de mensaje implementará su propio formato aquí
+    public abstract String generarContenido();
 
-    protected String getCabecera() {
-        return "[" + canal.toUpperCase() + "] ";
-    }
+    public String getCanal() { return canal; }
 }
