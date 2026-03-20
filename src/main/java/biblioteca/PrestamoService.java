@@ -9,7 +9,9 @@ public class PrestamoService {
             throw new IllegalStateException("Ya estaba prestado");
         }
         libro.prestarA(dni, LocalDate.now().plusDays(14));
-        System.out.println("Prestado: " + libro.getTitulo() + " a " + dni);
+        if (!(libro instanceof LibroReferencia)) {
+            System.out.println("Prestado: " + libro.getTitulo() + " a " + dni);
+        }
     }
 
     public boolean devolver(Libro libro) {
